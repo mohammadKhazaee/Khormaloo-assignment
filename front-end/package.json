@@ -1,0 +1,15 @@
+{
+  "name": "khormaloo-front",
+  "version": "1.0.0",
+  "description": "form builders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "npx create-react-app my-app"
+  },
+  "author": "Rebuilders team",
+  "license": "ISC"
+}
