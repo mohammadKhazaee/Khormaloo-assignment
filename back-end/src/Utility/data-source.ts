@@ -2,6 +2,9 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv-flow";
 import { UserEntity } from "../DB-Entities/user.entity";
 import { FormEntity } from "../DB-Entities/form.entity";
+import { fieldEntity } from "../DB-Entities/Field.entity";
+import { answersEntity } from "../DB-Entities/asnwers.entity";
+import { answersheetEntity } from "../DB-Entities/answer-sheet.entity";
 
 dotenv.config();
 export const AppDataSource = new DataSource({
@@ -13,7 +16,13 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASS,
     synchronize: true,
     logging: true,
-    entities: [UserEntity, FormEntity],
+    entities: [
+        UserEntity,
+        FormEntity,
+        fieldEntity,
+        answersEntity,
+        answersheetEntity,
+    ],
     subscribers: [],
     migrations: [],
 });

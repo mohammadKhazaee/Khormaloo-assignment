@@ -8,15 +8,11 @@ import {
     UpdateDateColumn,
 } from "typeorm";
 import { FormEntity } from "./form.entity";
-import { questionEntity } from "./Questions";
-import { answerEntity } from "./answers.entity";
+import { answersheetEntity } from "./answer-sheet.entity";
 
 @Entity("User")
 export class UserEntity {
     @PrimaryColumn()
-    id!: string;
-
-    @Column()
     username!: string;
 
     @CreateDateColumn()
@@ -27,6 +23,6 @@ export class UserEntity {
     @OneToMany(() => FormEntity, (form) => form)
     forms!: FormEntity[];
 
-    @OneToMany(() => answerEntity, (answer) => answer)
-    answer!: answerEntity[];
+    @OneToMany(() => answersheetEntity, (answersheet) => answersheet)
+    answersheets!: answersheetEntity[];
 }
