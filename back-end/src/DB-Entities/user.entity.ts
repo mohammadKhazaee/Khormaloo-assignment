@@ -8,7 +8,7 @@ import {
     UpdateDateColumn,
 } from "typeorm";
 import { FormEntity } from "./form.entity";
-import { AnswersheetEntity } from "./answer-sheets.entity";
+import { AnswerSheetEntity } from "./answer-sheets.entity";
 
 @Entity("Users")
 export class UserEntity {
@@ -21,8 +21,8 @@ export class UserEntity {
     updatedAt!: Date;
 
     @OneToMany(() => FormEntity, (Form) => Form.user)
-    form!: FormEntity[];
+    forms!: FormEntity[];
 
-    @OneToMany(() => AnswersheetEntity, (Answersheet) => Answersheet.user)
-    answersheet!: AnswersheetEntity[];
+    @OneToMany(() => AnswerSheetEntity, (Answersheet) => Answersheet.user)
+    answersheets!: AnswerSheetEntity[];
 }

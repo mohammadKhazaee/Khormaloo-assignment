@@ -32,7 +32,7 @@ export class FieldEntity {
     @UpdateDateColumn()
     updatedAt!: Date;
 
-    @ManyToOne(() => FormEntity, (Form) => Form.field)
+    @ManyToOne(() => FormEntity, (Form) => Form.fields)
     form!: FormEntity;
     
 }

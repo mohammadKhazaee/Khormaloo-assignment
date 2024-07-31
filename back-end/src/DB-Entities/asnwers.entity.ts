@@ -7,8 +7,9 @@ import {
     PrimaryGeneratedColumn,
 } from "typeorm";
 import { FieldValue } from "../Types/field";
-import { FieldEntity } from "./Field.entity";
-import { AnswersheetEntity } from "./answer-sheets.entity";
+
+import { AnswerSheetEntity } from "./answer-sheets.entity";
+import { FieldEntity } from "./field.entity";
 @Entity("answers")
 export class AnswersEntity {
     @PrimaryGeneratedColumn()
@@ -24,7 +25,7 @@ export class AnswersEntity {
     @JoinColumn()
     field!: FieldEntity;
     @ManyToOne(
-        () => AnswersheetEntity,
+        () => AnswerSheetEntity,
         (AnswersheetEntity) => AnswersheetEntity.answers
     )
     answersheet!: AnswersEntity;

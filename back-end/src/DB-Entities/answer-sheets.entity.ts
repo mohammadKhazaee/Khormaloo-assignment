@@ -10,8 +10,8 @@ import { FormEntity } from "./form.entity";
 import { from } from "form-data";
 import { UserEntity } from "./user.entity";
 
-@Entity("Answer-sheets")
-export class AnswersheetEntity {
+@Entity("Answer-Sheets")
+export class AnswerSheetEntity {
     @PrimaryGeneratedColumn()
     id!: number;
     @Column()
@@ -23,8 +23,8 @@ export class AnswersheetEntity {
         (AnswersEntity) => AnswersEntity.answersheet
     )
     answers!: AnswersEntity[];
-    @ManyToOne(() => FormEntity, (From) => From.answersheet)
+    @ManyToOne(() => FormEntity, (From) => From.answersheets)
     form!: FormEntity;
-    @ManyToOne(() => UserEntity, (User) => User.answersheet)
+    @ManyToOne(() => UserEntity, (User) => User.answersheets)
     user!: UserEntity;
 }

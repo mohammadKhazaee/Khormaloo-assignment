@@ -8,3 +8,4 @@ export interface FieldValue {
 }
 export type CheckboxOption = { content: string; value: string };
 export type RadioOption = { content: string; value: string; for: string };
+
