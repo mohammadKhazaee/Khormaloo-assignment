@@ -8,10 +8,10 @@ import {
     UpdateDateColumn,
 } from "typeorm";
 import { UserEntity } from "./user.entity";
-import { answersheetEntity } from "./answer-sheet.entity";
-import { fieldEntity } from "./Field.entity";
+import { AnswersheetEntity } from "./answer-sheets.entity";
+import { FieldEntity } from "./Field.entity";
 
-@Entity("forms")
+@Entity("Forms")
 export class FormEntity {
     @PrimaryGeneratedColumn()
     id!: number;
@@ -27,10 +27,10 @@ export class FormEntity {
     @UpdateDateColumn()
     updatedAt!: Date;
 
-    @ManyToOne(() => UserEntity, (user) => user)
-    users!: UserEntity;
-    @OneToMany(() => answersheetEntity, (answersheet) => answersheet)
-    answersheets!: answersheetEntity;
-    @OneToMany(() => fieldEntity, (fieldEntity) => fieldEntity)
-    fields!: fieldEntity;
+    @ManyToOne(() => UserEntity, (User) => User.form)
+    user!: UserEntity;
+    @OneToMany(() => AnswersheetEntity, (Answersheet) => Answersheet.form)
+    answersheet!: AnswersheetEntity;
+    @OneToMany(() => FieldEntity, (FieldEntity) => FieldEntity.form)
+    field!: FieldEntity;
 }

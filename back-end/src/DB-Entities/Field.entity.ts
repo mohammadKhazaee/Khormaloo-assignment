@@ -4,31 +4,35 @@ import {
     ManyToMany,
     ManyToOne,
     OneToOne,
+    PessimisticLockTransactionRequiredError,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from "typeorm";
 import { FieldType, FieldValue } from "../Types/field";
 import { listFiles } from "dotenv-flow";
 import { FormEntity } from "./form.entity";
-import { answersEntity } from "./asnwers.entity";
+import { AnswersEntity } from "./asnwers.entity";
 
 @Entity("Fields")
-export class fieldEntity {
+export class FieldEntity {
     @PrimaryGeneratedColumn()
     id!: number;
     @Column()
     title!: string;
     @Column()
+    name!: string;
+    @Column()
+    required!: boolean;
+    @Column()
     type!: FieldType;
     @Column({ type: "json" })
-    value!: FieldValue;
+    options!: FieldValue;
     @Column()
     createdAt!: Date;
     @UpdateDateColumn()
     updatedAt!: Date;
 
-    @ManyToOne(() => FormEntity, (form) => form)
-    Forms!: FormEntity;
-    @OneToOne(() => answersEntity, (asnwers) => asnwers)
-    answers!: answersEntity;
+    @ManyToOne(() => FormEntity, (Form) => Form.field)
+    form!: FormEntity;
+    
 }

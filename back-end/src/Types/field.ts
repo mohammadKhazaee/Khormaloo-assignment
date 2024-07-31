@@ -1,10 +1,10 @@
 import { string } from "zod";
 
-export type FieldType = "text" | "checkbox" | "select" | "radio";
+export type FieldType = "Text" | "Checkbox" | "Select" | "Radio";
 
 export interface FieldValue {
     content?: string;
-    options?: checkboxOption[] | radioOption[];
+    options?: CheckboxOption[] | RadioOption[];
 }
-export type checkboxOption = { content: string; value: string };
-export type radioOption = { content: string; value: string; for: string };
+export type CheckboxOption = { content: string; value: string };
+export type RadioOption = { content: string; value: string; for: string };
