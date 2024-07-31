@@ -1,9 +1,10 @@
-import { DataSource } from "typeorm"
-import dotenv from "dotenv-flow"
+import { DataSource } from "typeorm";
+import dotenv from "dotenv-flow";
+import { UserEntity } from "../DB-Entities/user.entity";
+import { FormEntity } from "../DB-Entities/form.entity";
 
-dotenv.config()
+dotenv.config();
 export const AppDataSource = new DataSource({
-
     type: "mysql",
     host: "localhost",
     port: 3306,
@@ -12,9 +13,7 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASS,
     synchronize: true,
     logging: true,
-    entities: [],
+    entities: [UserEntity, FormEntity],
     subscribers: [],
     migrations: [],
-})
-
-
+});
