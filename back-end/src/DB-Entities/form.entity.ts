@@ -9,9 +9,9 @@ import {
 } from "typeorm";
 import { UserEntity } from "./user.entity";
 import { AnswerSheetEntity } from "./answer-sheets.entity";
-import { FieldEntity } from "./field.entity";
+import { FieldEntity } from "./Field.entity";
 
-@Entity("Forms")
+@Entity("forms")
 export class FormEntity {
     @PrimaryGeneratedColumn()
     id!: number;

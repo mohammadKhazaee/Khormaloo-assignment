@@ -7,10 +7,9 @@ import {
 } from "typeorm";
 import { AnswersEntity } from "./asnwers.entity";
 import { FormEntity } from "./form.entity";
-import { from } from "form-data";
 import { UserEntity } from "./user.entity";
 
-@Entity("Answer-Sheets")
+@Entity("answer_sheets")
 export class AnswerSheetEntity {
     @PrimaryGeneratedColumn()
     id!: number;

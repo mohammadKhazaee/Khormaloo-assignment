@@ -1,8 +1,6 @@
 import {
-    Column,
     CreateDateColumn,
     Entity,
-    ManyToMany,
     OneToMany,
     PrimaryColumn,
     UpdateDateColumn,
@@ -10,7 +8,7 @@ import {
 import { FormEntity } from "./form.entity";
 import { AnswerSheetEntity } from "./answer-sheets.entity";
 
-@Entity("Users")
+@Entity("users")
 export class UserEntity {
     @PrimaryColumn()
     username!: string;

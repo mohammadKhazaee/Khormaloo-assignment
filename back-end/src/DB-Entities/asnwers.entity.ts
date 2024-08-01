@@ -7,9 +7,9 @@ import {
     PrimaryGeneratedColumn,
 } from "typeorm";
 import { FieldValue } from "../Types/field";
-
 import { AnswerSheetEntity } from "./answer-sheets.entity";
-import { FieldEntity } from "./field.entity";
+import { FieldEntity } from "./Field.entity";
+
 @Entity("answers")
 export class AnswersEntity {
     @PrimaryGeneratedColumn()

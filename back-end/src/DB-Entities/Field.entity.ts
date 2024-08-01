@@ -1,19 +1,14 @@
 import {
     Column,
     Entity,
-    ManyToMany,
     ManyToOne,
-    OneToOne,
-    PessimisticLockTransactionRequiredError,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from "typeorm";
 import { FieldType, FieldValue } from "../Types/field";
-import { listFiles } from "dotenv-flow";
 import { FormEntity } from "./form.entity";
-import { AnswersEntity } from "./asnwers.entity";
 
-@Entity("Fields")
+@Entity("fields")
 export class FieldEntity {
     @PrimaryGeneratedColumn()
     id!: number;
@@ -34,5 +29,4 @@ export class FieldEntity {
 
     @ManyToOne(() => FormEntity, (Form) => Form.fields)
     form!: FormEntity;
-    
 }

@@ -4,7 +4,7 @@ import { UserEntity } from "../DB-Entities/user.entity";
 import { FormEntity } from "../DB-Entities/form.entity";
 import { FieldEntity } from "../DB-Entities/Field.entity";
 import { AnswersEntity } from "../DB-Entities/asnwers.entity";
-import { AnswersheetEntity } from "../DB-Entities/answer-sheets.entity";
+import { AnswerSheetEntity } from "../DB-Entities/answer-sheets.entity";
 
 dotenv.config();
 export const AppDataSource = new DataSource({
@@ -15,13 +15,13 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     synchronize: true,
-    logging: true,
+    logging: false,
     entities: [
         UserEntity,
         FormEntity,
         FieldEntity,
         AnswersEntity,
-        AnswersheetEntity,
+        AnswerSheetEntity,
     ],
     subscribers: [],
     migrations: [],
