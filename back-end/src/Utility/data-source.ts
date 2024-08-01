@@ -2,9 +2,9 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv-flow";
 import { UserEntity } from "../DB-Entities/user.entity";
 import { FormEntity } from "../DB-Entities/form.entity";
-import { fieldEntity } from "../DB-Entities/Field.entity";
-import { answersEntity } from "../DB-Entities/asnwers.entity";
-import { answersheetEntity } from "../DB-Entities/answer-sheet.entity";
+import { FieldEntity } from "../DB-Entities/Field.entity";
+import { AwnserEntity } from "../DB-Entities/asnwers.entity";
+import { AwnserSheetEntity } from "../DB-Entities/answer-sheet.entity";
 
 dotenv.config();
 export const AppDataSource = new DataSource({
@@ -19,9 +19,9 @@ export const AppDataSource = new DataSource({
     entities: [
         UserEntity,
         FormEntity,
-        fieldEntity,
-        answersEntity,
-        answersheetEntity,
+        FieldEntity,
+        AwnserEntity,
+        AwnserSheetEntity,
     ],
     subscribers: [],
     migrations: [],

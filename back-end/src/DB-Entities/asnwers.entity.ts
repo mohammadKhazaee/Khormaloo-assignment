@@ -6,10 +6,10 @@ import {
     PrimaryGeneratedColumn,
 } from "typeorm";
 import { FieldValue } from "../Types/field";
-import { fieldEntity } from "./Field.entity";
-import { answersheetEntity } from "./answer-sheet.entity";
+import { FieldEntity as FieldEntity } from "./Field.entity";
+import { AwnserSheetEntity } from "./answer-sheet.entity";
 @Entity("answers")
-export class answersEntity {
+export class AwnserEntity {
     @PrimaryGeneratedColumn()
     id!: number;
     @Column({ type: "json" })
@@ -19,8 +19,8 @@ export class answersEntity {
     @Column()
     updatedAt!: Date;
 
-    @OneToOne(() => fieldEntity, (fieldEntity) => fieldEntity)
-    fields!: fieldEntity;
-    @ManyToOne(() => answersheetEntity, (answersheetEntity) => answersEntity)
-    answersheets!: answersEntity;
+    @OneToOne(() => FieldEntity, (fieldEntity) => fieldEntity)
+    fields!: FieldEntity[];
+    @ManyToOne(() => AwnserSheetEntity, (answersheetEntity) => AwnserEntity)
+    answersheets!: AwnserEntity[];
 }
