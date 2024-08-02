@@ -12,6 +12,7 @@ import logo from "./logo.svg";
 // import "./App.css";
 import { EditPage } from "./pages/EditPage";
 import { FirstPage } from "./pages/FirstPage";
+import { FormCard } from "./components/FormCard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Router>
         <Header />
         <FirstPage />
+
         <Routes>
           <Route path="/EditPage" element={<EditPage />} />
           <Route path="/nextPage" element={<NextPage />} />

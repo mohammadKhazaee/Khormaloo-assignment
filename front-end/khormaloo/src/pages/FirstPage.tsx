@@ -1,6 +1,24 @@
 import NextPage from "../components/NextPage";
+import { FormCard } from "../components/FormCard";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const FirstPage = () => {
+  // const [formData, setFormData] = useState([]);
+
+  // async function loadForms() {
+  //   const response = await fetch("");
+  //   const forms = await response.json();
+  //   let tmpFormData = formData;
+  //   forms.data.forEach((form: string) => {
+  //     tmpFormData.push(form);
+  //   });
+  //   setFormData(tmpFormData);
+  // }
+
+  // useEffect(() => {
+  //   loadForms();
+  // }, []);
   return (
     <>
       <div>
@@ -21,12 +39,12 @@ export const FirstPage = () => {
         >
           Your Forms:
           <div className="grid grid-cols-6 gap-x-10 items-stretch mr-10 mt-5">
-            <div>form 1</div>
-            <div>form 2</div>
-            <div>form 3</div>
-            <div>form 4</div>
-            <div>form 5</div>
-            <div>form 6</div>
+            <FormCard />
+            <FormCard />
+            <FormCard />
+            <FormCard />
+            <FormCard />
+            <FormCard />
             {/* we neen this here: */}
             {/* {formData.map((form, index) => {
               return <FormCard form={form} />;
