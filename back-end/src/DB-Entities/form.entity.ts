@@ -2,6 +2,7 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    JoinColumn,
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn,
@@ -18,19 +19,29 @@ export class FormEntity {
 
     @Column()
     title!: string;
+
     @Column()
     description!: string;
+
     @Column()
     is_published!: boolean;
+
     @CreateDateColumn()
     createdAt!: Date;
+
     @UpdateDateColumn()
     updatedAt!: Date;
 
+    @Column()
+    creatorId!: string;
+
     @ManyToOne(() => UserEntity, (User) => User.forms)
-    user!: UserEntity;
+    @JoinColumn({ name: "creatorId" })
+    user?: UserEntity;
+
     @OneToMany(() => AnswerSheetEntity, (Answersheet) => Answersheet.form)
-    answersheets!: AnswerSheetEntity[];
+    answerSheets?: AnswerSheetEntity[];
+
     @OneToMany(() => FieldEntity, (FieldEntity) => FieldEntity.form)
-    fields!: FieldEntity[];
+    fields?: FieldEntity[];
 }

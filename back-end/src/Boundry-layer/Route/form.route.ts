@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { creatFormDto } from "../../Dto/formDto";
+import { formService } from "../../Utility/dependency";
 
 export const app = Router();
 
@@ -9,7 +11,13 @@ app.get("/");
 app.get("/:id");
 
 //  POST:/form
-app.post("/");
+app.post("/", async (req, res, next) => {
+    const dto = creatFormDto.parse(req.body);
+
+    // const createdForm = await formService.createForm(dto);
+
+    res.status(201).send({ message: "form created" });
+});
 
 //  PUT:/form/:id
 app.put("/:id");
