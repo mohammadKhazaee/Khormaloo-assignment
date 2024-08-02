@@ -22,5 +22,5 @@ export class AnswerEntity {
     @OneToOne(() => FieldEntity, (fieldEntity) => fieldEntity)
     fields!: FieldEntity[];
     @ManyToOne(() => AnswerSheetEntity, (answersheetEntity) => AnswerEntity)
-    answersheets!: AnswerEntity[];
+    answersheets!: AnswerSheetEntity[];
 }

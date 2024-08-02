@@ -28,7 +28,7 @@ export class FieldEntity {
     updatedAt!: Date;
 
     @ManyToOne(() => FormEntity, (form) => form)
-    Forms!: FormEntity[];
+    forms!: FormEntity[];
     @OneToOne(() => AnswerEntity, (asnwers) => asnwers)
-    awnsers!: AnswerEntity[];
+    answers!: AnswerEntity[];
 }
