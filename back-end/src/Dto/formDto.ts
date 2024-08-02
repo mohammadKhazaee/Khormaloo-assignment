@@ -17,7 +17,7 @@ export const fieldSchema = z.discriminatedUnion("type", [
         title: z.string(),
         value: z.string(),
         requierd: z.boolean(),
-        type: z.literal("text"),
+        type: z.literal("Text"),
         content: z.string(),
     }),
     z.object({
@@ -25,7 +25,7 @@ export const fieldSchema = z.discriminatedUnion("type", [
         title: z.string(),
         value: z.string(),
         requierd: z.boolean(),
-        type: z.union([z.literal("checkbox"), z.literal("select")]),
+        type: z.union([z.literal("Checkbox"), z.literal("Select")]),
         options: z.array(checkboxOptionSchema),
     }),
     z.object({
@@ -33,7 +33,7 @@ export const fieldSchema = z.discriminatedUnion("type", [
         title: z.string(),
         value: z.string(),
         requierd: z.boolean(),
-        type: z.literal("radio"),
+        type: z.literal("Radio"),
         options: z.array(radioOptionSchema),
     }),
 ]);
