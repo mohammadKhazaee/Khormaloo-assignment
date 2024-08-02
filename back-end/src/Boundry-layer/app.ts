@@ -1,4 +1,5 @@
 import express, { ErrorRequestHandler } from "express";
+import { app as formRouter } from "./Route/form.route";
 import { ZodError } from "zod";
 
 export const app = express();
@@ -6,7 +7,7 @@ export const app = express();
 app.use(express.json());
 
 // routes
-app.use("/form");
+app.use("/form", formRouter);
 
 app.use((req, res) => {
     res.status(404).send({ message: "Not Found" });
