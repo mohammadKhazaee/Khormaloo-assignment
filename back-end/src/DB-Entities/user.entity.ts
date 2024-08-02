@@ -20,8 +20,8 @@ export class UserEntity {
     updatedAt!: Date;
 
     @OneToMany(() => FormEntity, (Form) => Form.user)
-    forms!: FormEntity[];
+    forms?: FormEntity[];
 
     @OneToMany(() => AnswerSheetEntity, (Answersheet) => Answersheet.user)
-    answerSheets!: AnswerSheetEntity[];
+    answerSheets?: AnswerSheetEntity[];
 }

@@ -42,5 +42,5 @@ export class FieldEntity {
     formId!: number;
 
     @ManyToOne(() => FormEntity, (Form) => Form.fields)
-    form!: FormEntity;
+    form?: FormEntity;
 }

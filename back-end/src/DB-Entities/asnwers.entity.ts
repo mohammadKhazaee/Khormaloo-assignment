@@ -31,7 +31,7 @@ export class AnswersEntity {
 
     @OneToOne(() => FieldEntity)
     @JoinColumn({ name: "fieldId" })
-    field!: FieldEntity;
+    field?: FieldEntity;
 
     @Column()
     answerSheetId!: number;
@@ -40,5 +40,5 @@ export class AnswersEntity {
         () => AnswerSheetEntity,
         (AnswersheetEntity) => AnswersheetEntity.answers
     )
-    answerSheet!: AnswersEntity;
+    answerSheet?: AnswersEntity;
 }

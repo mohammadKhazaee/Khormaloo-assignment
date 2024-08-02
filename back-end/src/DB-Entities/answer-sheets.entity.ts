@@ -33,12 +33,12 @@ export class AnswerSheetEntity {
     formId!: number;
 
     @ManyToOne(() => FormEntity, (From) => From.answerSheets)
-    form!: FormEntity;
+    form?: FormEntity;
 
     @Column()
     responderId!: string;
 
     @ManyToOne(() => UserEntity, (User) => User.answerSheets)
     @JoinColumn({ name: "responderId" })
-    user!: UserEntity;
+    user?: UserEntity;
 }

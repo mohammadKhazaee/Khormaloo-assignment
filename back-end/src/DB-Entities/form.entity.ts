@@ -37,11 +37,11 @@ export class FormEntity {
 
     @ManyToOne(() => UserEntity, (User) => User.forms)
     @JoinColumn({ name: "creatorId" })
-    user!: UserEntity;
+    user?: UserEntity;
 
     @OneToMany(() => AnswerSheetEntity, (Answersheet) => Answersheet.form)
-    answerSheets!: AnswerSheetEntity[];
+    answerSheets?: AnswerSheetEntity[];
 
     @OneToMany(() => FieldEntity, (FieldEntity) => FieldEntity.form)
-    fields!: FieldEntity[];
+    fields?: FieldEntity[];
 }
