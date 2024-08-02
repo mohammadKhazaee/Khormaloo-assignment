@@ -1,9 +1,9 @@
-import { Awnsersheet } from "./awnsersheet";
+import { Answersheet } from "./answersheet";
 import { FieldValue } from "./field";
 
-export interface Awnser {
+export interface Answer {
     id: number,
     value: FieldValue,
     fields: FieldValue[],
-    answersheets: Awnsersheet[]
+    answersheets: Answersheet[]
 }

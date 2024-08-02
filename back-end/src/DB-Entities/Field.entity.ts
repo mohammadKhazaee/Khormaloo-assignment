@@ -10,7 +10,7 @@ import {
 import { FieldType, FieldValue } from "../Types/field";
 import { listFiles } from "dotenv-flow";
 import { FormEntity } from "./form.entity";
-import { AwnserEntity } from "./asnwers.entity";
+import { AnswerEntity } from "./asnwers.entity";
 
 @Entity("Fields")
 export class FieldEntity {
@@ -29,6 +29,6 @@ export class FieldEntity {
 
     @ManyToOne(() => FormEntity, (form) => form)
     Forms!: FormEntity[];
-    @OneToOne(() => AwnserEntity, (asnwers) => asnwers)
-    awnsers!: AwnserEntity[];
+    @OneToOne(() => AnswerEntity, (asnwers) => asnwers)
+    awnsers!: AnswerEntity[];
 }

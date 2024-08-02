@@ -7,9 +7,9 @@ import {
 } from "typeorm";
 import { FieldValue } from "../Types/field";
 import { FieldEntity as FieldEntity } from "./Field.entity";
-import { AwnserSheetEntity } from "./answer-sheet.entity";
+import { AnswerSheetEntity } from "./answer-sheet.entity";
 @Entity("answers")
-export class AwnserEntity {
+export class AnswerEntity {
     @PrimaryGeneratedColumn()
     id!: number;
     @Column({ type: "json" })
@@ -21,6 +21,6 @@ export class AwnserEntity {
 
     @OneToOne(() => FieldEntity, (fieldEntity) => fieldEntity)
     fields!: FieldEntity[];
-    @ManyToOne(() => AwnserSheetEntity, (answersheetEntity) => AwnserEntity)
-    answersheets!: AwnserEntity[];
+    @ManyToOne(() => AnswerSheetEntity, (answersheetEntity) => AnswerEntity)
+    answersheets!: AnswerEntity[];
 }

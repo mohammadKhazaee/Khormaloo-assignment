@@ -1,11 +1,10 @@
-import { Awnser } from "./awnser";
+import { Answer } from "./answer";
 import { Form } from "./form";
 import { User } from "./user";
 
-export interface Awnsersheet {
+export interface Answersheet {
     id: number,
-    awnsers: Awnser[],
+    answers: Answer[],
     forms: Form[],
     users: User[]
-
 }

@@ -1,6 +1,6 @@
 import { string } from "zod";
 import { Form } from "./form";
-import { Awnser } from "./awnser";
+import { Answer } from "./answer";
 
 export type FieldType = "text" | "checkbox" | "select" | "radio";
 
@@ -15,7 +15,7 @@ export interface Field {
     type: FieldType,
     value: FieldValue,
     forms: Form[]
-    answers: Awnser[]
+    answers: Answer[]
 }
 
 export type checkboxOption = { content: string; value: string };

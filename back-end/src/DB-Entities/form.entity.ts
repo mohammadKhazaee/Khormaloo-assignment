@@ -8,7 +8,7 @@ import {
     UpdateDateColumn,
 } from "typeorm";
 import { UserEntity } from "./user.entity";
-import { AwnserSheetEntity } from "./answer-sheet.entity";
+import { AnswerSheetEntity } from "./answer-sheet.entity";
 import { FieldEntity } from "./Field.entity";
 import { Field } from "../Types/field";
 
@@ -30,8 +30,8 @@ export class FormEntity {
 
     @ManyToOne(() => UserEntity, (user) => user)
     users!: UserEntity[];
-    @OneToMany(() => AwnserSheetEntity, (answersheet) => answersheet)
-    awnserSheets!: AwnserSheetEntity[];
+    @OneToMany(() => AnswerSheetEntity, (answersheet) => answersheet)
+    awnserSheets!: AnswerSheetEntity[];
     @OneToMany(() => FieldEntity, (fieldEntity) => fieldEntity)
     fields!: FieldEntity[];
 }

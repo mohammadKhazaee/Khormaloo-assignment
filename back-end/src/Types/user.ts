@@ -1,8 +1,8 @@
-import { Awnsersheet } from "./awnsersheet";
+import { Answersheet } from "./answersheet";
 import { Form } from "./form";
 
 export interface User {
     username: string,
     forms: Form[],
-    awnserSheets: Awnsersheet[],
+    awnserSheets: Answersheet[],
 }

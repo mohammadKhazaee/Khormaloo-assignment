@@ -1,5 +1,5 @@
 import { FieldEntity } from "../DB-Entities/Field.entity"
-import { Awnsersheet } from "./awnsersheet"
+import { Answersheet } from "./answersheet"
 import { FieldValue } from "./field"
 import { User } from "./user"
 
@@ -9,7 +9,7 @@ export interface Form {
     description: string,
     is_published: boolean
     users: User[]
-    awnserSheets: Awnsersheet[]
+    awnserSheets: Answersheet[]
     fields: FieldEntity[]
 
 

@@ -3,8 +3,8 @@ import dotenv from "dotenv-flow";
 import { UserEntity } from "../DB-Entities/user.entity";
 import { FormEntity } from "../DB-Entities/form.entity";
 import { FieldEntity } from "../DB-Entities/Field.entity";
-import { AwnserEntity } from "../DB-Entities/asnwers.entity";
-import { AwnserSheetEntity } from "../DB-Entities/answer-sheet.entity";
+import { AnswerEntity } from "../DB-Entities/asnwers.entity";
+import { AnswerSheetEntity } from "../DB-Entities/answer-sheet.entity";
 
 dotenv.config();
 export const AppDataSource = new DataSource({
@@ -20,8 +20,8 @@ export const AppDataSource = new DataSource({
         UserEntity,
         FormEntity,
         FieldEntity,
-        AwnserEntity,
-        AwnserSheetEntity,
+        AnswerEntity,
+        AnswerSheetEntity,
     ],
     subscribers: [],
     migrations: [],
