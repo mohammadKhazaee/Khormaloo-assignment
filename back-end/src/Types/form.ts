@@ -7,10 +7,9 @@ export interface Form {
     id: number,
     title: string,
     description: string,
-    is_published: boolean
-    users: User[]
-    awnserSheets: Answersheet[]
-    fields: FieldEntity[]
-
-
+    is_published: boolean,
+    creatorId: string,
+    user?: User,
+    awnserSheets?: Answersheet[],
+    fields?: FieldEntity[],
 }

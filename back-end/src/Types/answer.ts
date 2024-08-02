@@ -4,6 +4,8 @@ import { Field, FieldValue } from "./field";
 export interface Answer {
     id: number,
     value: FieldValue,
-    fields: Field[],
-    answersheets: Answersheet[]
+    fieldId: number,
+    field?: Field,
+    answerSheetId: number;
+    answersheets?: Answersheet
 }

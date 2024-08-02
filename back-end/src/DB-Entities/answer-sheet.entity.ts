@@ -5,7 +5,7 @@ import {
     OneToMany,
     PrimaryGeneratedColumn,
 } from "typeorm";
-import { AnswerEntity } from "./asnwers.entity";
+import { AnswersEntity } from "./asnwers.entity";
 import { FormEntity } from "./form.entity";
 import { UserEntity } from "./user.entity";
 
@@ -17,8 +17,8 @@ export class AnswerSheetEntity {
     createdAt!: Date;
     @Column()
     updatedAt!: Date;
-    @OneToMany(() => AnswerEntity, (answersEntity) => answersEntity)
-    answers!: AnswerEntity[];
+    @OneToMany(() => AnswersEntity, (answersEntity) => answersEntity)
+    answers!: AnswersEntity[];
     @ManyToOne(() => FormEntity, (from) => from)
     forms!: FormEntity[];
     @ManyToOne(() => UserEntity, (user) => user)
