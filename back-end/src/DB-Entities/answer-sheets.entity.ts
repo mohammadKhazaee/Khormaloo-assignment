@@ -1,9 +1,12 @@
 import {
     Column,
+    CreateDateColumn,
     Entity,
+    JoinColumn,
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn,
+    UpdateDateColumn,
 } from "typeorm";
 import { AnswersEntity } from "./asnwers.entity";
 import { FormEntity } from "./form.entity";
@@ -13,17 +16,29 @@ import { UserEntity } from "./user.entity";
 export class AnswerSheetEntity {
     @PrimaryGeneratedColumn()
     id!: number;
-    @Column()
+
+    @CreateDateColumn()
     createdAt!: Date;
-    @Column()
+
+    @UpdateDateColumn()
     updatedAt!: Date;
+
     @OneToMany(
         () => AnswersEntity,
-        (AnswersEntity) => AnswersEntity.answersheet
+        (AnswersEntity) => AnswersEntity.answerSheet
     )
     answers!: AnswersEntity[];
-    @ManyToOne(() => FormEntity, (From) => From.answersheets)
+
+    @Column()
+    formId!: number;
+
+    @ManyToOne(() => FormEntity, (From) => From.answerSheets)
     form!: FormEntity;
-    @ManyToOne(() => UserEntity, (User) => User.answersheets)
+
+    @Column()
+    responderId!: string;
+
+    @ManyToOne(() => UserEntity, (User) => User.answerSheets)
+    @JoinColumn({ name: "responderId" })
     user!: UserEntity;
 }

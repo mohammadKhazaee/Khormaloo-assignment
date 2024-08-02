@@ -15,6 +15,7 @@ export class UserEntity {
 
     @CreateDateColumn()
     createdAt!: Date;
+
     @UpdateDateColumn()
     updatedAt!: Date;
 
@@ -22,5 +23,5 @@ export class UserEntity {
     forms!: FormEntity[];
 
     @OneToMany(() => AnswerSheetEntity, (Answersheet) => Answersheet.user)
-    answersheets!: AnswerSheetEntity[];
+    answerSheets!: AnswerSheetEntity[];
 }

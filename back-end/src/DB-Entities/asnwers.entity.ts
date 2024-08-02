@@ -1,10 +1,12 @@
 import {
     Column,
+    CreateDateColumn,
     Entity,
     JoinColumn,
     ManyToOne,
     OneToOne,
     PrimaryGeneratedColumn,
+    UpdateDateColumn,
 } from "typeorm";
 import { FieldValue } from "../Types/field";
 import { AnswerSheetEntity } from "./answer-sheets.entity";
@@ -14,19 +16,29 @@ import { FieldEntity } from "./Field.entity";
 export class AnswersEntity {
     @PrimaryGeneratedColumn()
     id!: number;
+
     @Column({ type: "json" })
     value!: FieldValue;
-    @Column()
+
+    @CreateDateColumn()
     createdAt!: Date;
-    @Column()
+
+    @UpdateDateColumn()
     updatedAt!: Date;
 
+    @Column()
+    fieldId!: number;
+
     @OneToOne(() => FieldEntity)
-    @JoinColumn()
+    @JoinColumn({ name: "fieldId" })
     field!: FieldEntity;
+
+    @Column()
+    answerSheetId!: number;
+
     @ManyToOne(
         () => AnswerSheetEntity,
         (AnswersheetEntity) => AnswersheetEntity.answers
     )
-    answersheet!: AnswersEntity;
+    answerSheet!: AnswersEntity;
 }

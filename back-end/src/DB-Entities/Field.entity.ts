@@ -1,5 +1,6 @@
 import {
     Column,
+    CreateDateColumn,
     Entity,
     ManyToOne,
     PrimaryGeneratedColumn,
@@ -12,20 +13,33 @@ import { FormEntity } from "./form.entity";
 export class FieldEntity {
     @PrimaryGeneratedColumn()
     id!: number;
+
     @Column()
     title!: string;
+
     @Column()
     name!: string;
+
+    @Column()
+    value!: string;
+
     @Column()
     required!: boolean;
+
     @Column()
     type!: FieldType;
+
     @Column({ type: "json" })
     options!: FieldValue;
-    @Column()
+
+    @CreateDateColumn()
     createdAt!: Date;
+
     @UpdateDateColumn()
     updatedAt!: Date;
+
+    @Column()
+    formId!: number;
 
     @ManyToOne(() => FormEntity, (Form) => Form.fields)
     form!: FormEntity;
