@@ -1,15 +1,30 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import Header from "./components/Header";
+import NextPage from "./components/NextPage";
 import logo from "./logo.svg";
 // import "./App.css";
 import { EditPage } from "./pages/EditPage";
+import { FirstPage } from "./pages/FirstPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header"> </header>
-      <Header />
-      <EditPage />
+      <Router>
+        <Header />
+        <FirstPage />
+        <Routes>
+          <Route path="/EditPage" element={<EditPage />} />
+          <Route path="/nextPage" element={<NextPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
